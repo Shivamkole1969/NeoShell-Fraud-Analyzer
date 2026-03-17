@@ -1,6 +1,5 @@
 import pandas as pd
 import networkx as nx
-import numpy as np
 
 def calculate_pagerank_spikes():
     print("Loading time-series ownership records...")
@@ -9,7 +8,6 @@ def calculate_pagerank_spikes():
     
     # 1. Split Data into Time Windows (Q3 vs Q4 for simplicity)
     q3_mask = (df['start_date'] < '2023-10-01')
-    q4_mask = (df['start_date'] >= '2023-10-01')
     
     df_q3 = df[q3_mask]
     df_q4 = df  # Q4 view includes all current status (Historical + New)

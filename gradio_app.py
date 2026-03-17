@@ -1,7 +1,6 @@
 import gradio as gr
 import pandas as pd
 import networkx as nx
-import json
 
 # Load Data
 df = pd.read_csv('data/ownership_timeseries.csv')
