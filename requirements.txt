@@ -1,0 +1,31 @@
+# Core Data & Graph
+neo4j
+pandas
+numpy
+networkx
+
+# AI & LLM
+langchain
+langchain-anthropic
+langchain-community
+sentence-transformers
+pinecone-client
+pypdf
+langgraph
+
+# Web & API
+streamlit
+fastapi
+uvicorn
+python-dotenv
+
+# ML & Performance
+scikit-learn
+xgboost
+torch
+torch-geometric
+
+# Utilities
+pytest
+ruff
+black
