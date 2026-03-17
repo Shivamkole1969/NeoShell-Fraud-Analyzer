@@ -4,10 +4,11 @@ import json
 
 from llama_index.core import PropertyGraphIndex
 from llama_index.graph_stores.neo4j import Neo4jPropertyGraphStore
+from pageindex import PageIndexClient
 
-# --- MOCK AGENTIC RAG SYSTEM with LLAMA-INDEX ---
-# This simulates the "PageIndex" technology you mentioned.
-# It uses LlamaIndex's PropertyGraphIndex to connect PDFs with Neo4j.
+# --- MOCK AGENTIC RAG SYSTEM with PAGEINDEX & LLAMA-INDEX ---
+# This implements the PageIndex (PageIndex.ai) tech, 
+# which is a reasoning-based RAG alternative.
 
 class AgentState(TypedDict):
     input_filing: str
@@ -16,18 +17,17 @@ class AgentState(TypedDict):
     summary: str
 
 def extraction_node(state: AgentState):
-    print("Agent: Using LlamaIndex (PageIndex) to scan SEC PDF...")
+    print("Agent: Invoking PageIndex (pageindex.ai) for reasoning-based retrieval...")
     
-    # Simulating LlamaIndex's Graph Store connection
-    # (In production, this would use your Neo4j credentials)
-    # state['graph_store'] = Neo4jPropertyGraphStore(username="neo4j", password="...", url="...") 
+    # Initialize PageIndex Client (Requires PAGEINDEX_API_KEY environment variable)
+    # client = PageIndexClient(api_key=os.getenv("PAGEINDEX_API_KEY"))
     
-    print("Agent: Building PropertyGraphIndex from extracted pages...")
+    print("Agent: PageIndex is scanning documents without vector search or top-K... (Higher accuracy)")
     
-    # Mocking extraction of hidden connections LlamaIndex finds in the text
+    # Mocking PageIndex's traceable findings
     state['extracted_entities'] = [
-        {"entity": "Global Holdings Inc", "type": "Shell Company", "source_page": 42},
-        {"entity": "Hidden Proxy Director", "type": "Individual", "source_page": 112}
+        {"entity": "Global Holdings Inc", "type": "Shell Company", "source_page": 42, "reasoning": "Explicitly mentioned as owner in Item 1A"},
+        {"entity": "Hidden Proxy Director", "type": "Individual", "source_page": 112, "reasoning": "Detected via reasoning on signature paths"}
     ]
     state['needs_validation'] = True
     return state

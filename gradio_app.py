@@ -21,13 +21,13 @@ def run_agent_investigation(person_id, retrieval_method):
 - **Result:** Found mention of name. No abnormal keywords (e.g., 'fraud') found near chunk.
 - **Limitation:** This chunk-based retrieval misses the hidden network connection.
         """
-    else:  # PageRank-Driven Indexing
+    else:  # PageIndex.ai
         return f"""
-### 🛡️ PageRank-Driven (Graph) Report for {person_id}
+### 🛡️ PageIndex.ai (Reasoning Index) Report for {person_id}
 - **Status:** **CRITICAL ALERT**
-- **Finding:** **High Centrality Node** (PR: 0.98) identified. 
-- **Connection:** While the text looks clean, this entity is the **central hub** of 12 newly spun shell companies.
-- **Why it's better:** This indexing discovered the **structural influence** that standard RAG misses.
+- **Finding:** **Reasoning-based extraction** identified hidden beneficial ownership. 
+- **Traceability:** Found on Page 42 and 112 via structural reasoning.
+- **Why it's better:** PageIndex does not use vector search, preventing the "Lost in the Middle" context problem common in traditional RAG.
         """
 
 # --- GRADIO UI ---
@@ -38,8 +38,8 @@ with gr.Blocks(theme=gr.themes.Monochrome()) as demo:
     with gr.Tab("🕸️ Network Explorer & AI Agent"):
         with gr.Row():
             person_input = gr.Dropdown([f"PERS_{i:04d}" for i in range(10)], label="Investigate Individual")
-            retrieval_method = gr.Radio(["Standard Vector RAG", "PageRank-Driven Indexing"], 
-                                      value="PageRank-Driven Indexing",
+            retrieval_method = gr.Radio(["Standard Vector RAG", "PageIndex.ai (Reasoning Index)"], 
+                                      value="PageIndex.ai (Reasoning Index)",
                                       label="Select Retrieval Engine (The RAG Competitor)")
         
         investigate_btn = gr.Button("🚀 Run AI Investigation", variant="primary")

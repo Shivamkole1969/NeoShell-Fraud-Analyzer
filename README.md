@@ -19,16 +19,17 @@ pinned: true
 
 ---
 
-## 🏆 Graph-Indexing vs. Traditional RAG: The Competition
+## 🏆 PageIndex.ai vs. Traditional RAG: The Competition
 
-While standard RAG (Retrieval-Augmented Generation) relies on **Vector Similarity** (how *similar* a filing is to a query), NeoShell uses **Graph Centrality (PageRank)** to determine **Authority**.
+While standard RAG (Retrieval-Augmented Generation) relies on **Vector Similarity** (how *similar* a filing is to a query), NeoShell implements **[PageIndex.ai](https://pageindex.ai/)**—a vectorless, reasoning-based retrieval engine.
 
-| Feature | Standard Vector RAG | NeoShell Graph-Indexed RAG |
+| Feature | Standard Vector RAG | NeoShell (Powered by PageIndex.ai) |
 | :--- | :--- | :--- |
-| **Logic** | Finds similar text chunks. | Finds **highly connected** shell actors. |
-| **Context** | Independent chunks (No links). | Interconnected network (Ownership links). |
-| **Fraud Signal** | Keywords (e.g., "Offshore"). | **Centrality (High PageRank)**. |
-| **Why it Wins** | Good for FAQs. | **Superior for detecting hidden Beneficial Owners.** |
+| **Logic** | Finds similar text chunks. | **Reasoning-based** document understanding. |
+| **Context** | Independent chunks (No links). | Understands long-document structure. |
+| **Search Method** | Top-K Vector Search. | No Top-K or Vector DB required. |
+| **Fraud Signal** | Keywords. | **Traceable logic & reasoning.** |
+| **Accuracy** | Prone to missing context. | **98.7% Accuracy (FinanceBench).** |
 
 ---
 

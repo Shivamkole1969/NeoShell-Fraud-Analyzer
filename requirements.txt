@@ -5,6 +5,7 @@ numpy
 networkx
 
 # AI & LLM
+pageindex
 llama-index
 llama-index-graph-stores-neo4j
 langchain
