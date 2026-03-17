@@ -1,3 +1,14 @@
+---
+title: NeoShell Fraud Analyzer
+emoji: 🛡️
+colorFrom: blue
+colorTo: indigo
+sdk: streamlit
+sdk_version: 1.31.0
+app_file: app.py
+pinned: true
+---
+
 # NeoShell: Corporate Shell Company & PE Fraud Analyzer (Time-Series GraphRAG)
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
