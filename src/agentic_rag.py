@@ -2,9 +2,12 @@ from langgraph.graph import StateGraph, END
 from typing import TypedDict, List
 import json
 
-# --- MOCK AGENTIC RAG SYSTEM ---
-# This simulates the "Agentic RAG" logic you mentioned in your resume.
-# It "reads" SEC 10-K Filings to extract hidden beneficial owners.
+from llama_index.core import PropertyGraphIndex
+from llama_index.graph_stores.neo4j import Neo4jPropertyGraphStore
+
+# --- MOCK AGENTIC RAG SYSTEM with LLAMA-INDEX ---
+# This simulates the "PageIndex" technology you mentioned.
+# It uses LlamaIndex's PropertyGraphIndex to connect PDFs with Neo4j.
 
 class AgentState(TypedDict):
     input_filing: str
@@ -13,12 +16,18 @@ class AgentState(TypedDict):
     summary: str
 
 def extraction_node(state: AgentState):
-    print("Agent: Extracting entities from SEC PDF...")
-    # In a real system, you'd use PyMuPDF here + an LLM prompt.
-    # We'll mock the extraction result.
+    print("Agent: Using LlamaIndex (PageIndex) to scan SEC PDF...")
+    
+    # Simulating LlamaIndex's Graph Store connection
+    # (In production, this would use your Neo4j credentials)
+    # state['graph_store'] = Neo4jPropertyGraphStore(username="neo4j", password="...", url="...") 
+    
+    print("Agent: Building PropertyGraphIndex from extracted pages...")
+    
+    # Mocking extraction of hidden connections LlamaIndex finds in the text
     state['extracted_entities'] = [
-        {"entity": "Global Holdings Inc", "type": "Shell Company", "connection": "Parent"},
-        {"entity": "John Doe", "type": "Beneficial Owner", "connection": "Ultimate Control"}
+        {"entity": "Global Holdings Inc", "type": "Shell Company", "source_page": 42},
+        {"entity": "Hidden Proxy Director", "type": "Individual", "source_page": 112}
     ]
     state['needs_validation'] = True
     return state

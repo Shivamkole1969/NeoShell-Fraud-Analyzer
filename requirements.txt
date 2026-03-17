@@ -5,6 +5,8 @@ numpy
 networkx
 
 # AI & LLM
+llama-index
+llama-index-graph-stores-neo4j
 langchain
 langchain-anthropic
 langchain-community
