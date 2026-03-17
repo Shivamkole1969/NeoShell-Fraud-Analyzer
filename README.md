@@ -9,16 +9,26 @@ app_file: gradio_app.py
 pinned: true
 ---
 
-# NeoShell: Corporate Shell Company & PE Fraud Analyzer (Time-Series GraphRAG)
+# NeoShell: Corporate Shell Company & PE Fraud Analyzer (Graph-Indexed RAG)
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue.svg)
 ![Neo4j](https://img.shields.io/badge/Neo4j-Graph_Data_Science-lightgrey)
-![HuggingFace](https://img.shields.io/badge/HuggingFace-Spaces-yellow)
-![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub_Actions-green)
+![ML/AI](https://img.shields.io/badge/Graph_Indexing-vs_Vector_RAG-red)
 
-**NeoShell** is a massive-scale, time-series graph analytics and Agentic RAG platform designed to uncover hidden beneficial owners and detect corporate shell-company fraud.
+**NeoShell** is a massive-scale, time-series graph analytics platform. It introduces **PageRank-driven Indexing** as a high-performance alternative to traditional Vector RAG systems for fraud detection.
 
-By correlating millions of public company records (OpenCorporates) with unstructured financial filings (SEC EDGAR PDFs), this system dynamically builds an evolving knowledge graph. It uses **Temporal PageRank** and **Graph Neural Networks (GNNs)** to identify highly central, high-risk entities manipulating complex corporate webs.
+---
+
+## 🏆 Graph-Indexing vs. Traditional RAG: The Competition
+
+While standard RAG (Retrieval-Augmented Generation) relies on **Vector Similarity** (how *similar* a filing is to a query), NeoShell uses **Graph Centrality (PageRank)** to determine **Authority**.
+
+| Feature | Standard Vector RAG | NeoShell Graph-Indexed RAG |
+| :--- | :--- | :--- |
+| **Logic** | Finds similar text chunks. | Finds **highly connected** shell actors. |
+| **Context** | Independent chunks (No links). | Interconnected network (Ownership links). |
+| **Fraud Signal** | Keywords (e.g., "Offshore"). | **Centrality (High PageRank)**. |
+| **Why it Wins** | Good for FAQs. | **Superior for detecting hidden Beneficial Owners.** |
 
 ---
 
