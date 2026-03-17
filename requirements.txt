@@ -14,6 +14,7 @@ pypdf
 langgraph
 
 # Web & API
+gradio
 streamlit
 fastapi
 uvicorn

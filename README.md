@@ -3,9 +3,9 @@ title: NeoShell Fraud Analyzer
 emoji: 🛡️
 colorFrom: blue
 colorTo: indigo
-sdk: streamlit
-sdk_version: 1.31.0
-app_file: app.py
+sdk: gradio
+sdk_version: 4.0.0
+app_file: gradio_app.py
 pinned: true
 ---
 
